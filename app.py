@@ -17,5 +17,6 @@ login_manager.init_app(app)
 from models import *
 from routes import *
 
-if __name__ == '__main__':
-    app.run()
+# 删除底部的启动代码
+# if __name__ == '__main__':
+#     app.run()

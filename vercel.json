@@ -1,7 +1,8 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "vercel_entrypoint.py",
+      "src": "wsgi.py",
       "use": "@vercel/python"
     }
   ],
@@ -9,9 +10,13 @@
     {
       "src": "/static/(.*)",
       "dest": "static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "wsgi.py"
     }
   ]
 }
-# 修改数据库配置
+// 删除文件末尾的Python代码残留
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace("postgres://", "postgresql://", 1)
 # 删除文件末尾的Python代码残留
