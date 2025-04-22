@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>发布新小说</h2>
+<form method="POST">
+    <input type="text" name="title" placeholder="小说标题" required>
+    <textarea name="description" placeholder="作品简介"></textarea>
+    <button type="submit">发布</button>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ novel.title }}</h1>
+<p class="description">{{ novel.description }}</p>
+<div class="chapters">
+    {% for chapter in novel.chapters %}
+    <div class="chapter">
+        <h3>{{ chapter.title }}</h3>
+        <pre>{{ chapter.content }}</pre>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
